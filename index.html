@@ -17,6 +17,25 @@
 </head>
 
 <body>
+
+  <div class="loading-container">
+    <!-- Put the loading html here -->
+    <div class="lds-grid">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- and then go to loading.scss and paste the css code there -->
+
+  </div>
+
   <nav>
     <a href="#" class="logo">Dias Utsman<span>.</span></a>
 
@@ -40,7 +59,7 @@
         <div class="links">
           <a href="" class="hire-me">Hire Me</a>
           <a target="_blank" href="https://github.com/diasutsman?tab=repositories" class="projects">
-            Projects 
+            Projects
             <i aria-hidden="true" class="fa-solid fa-up-right-from-square"></i>
           </a>
         </div>
@@ -52,7 +71,7 @@
           </div>
 
           <div class="info">
-            <p>572</p>
+            <p id="projectDone">...</p>
             <p>Project Done</p>
           </div>
 
@@ -86,12 +105,14 @@
         </div>
       </div>
 
-      
+
       <div class="hero-img">
         <img src="./img/dias.jpeg" alt="Dias Utsman">
       </div>
     </section>
   </main>
+
+  <script src="./js/script.js"></script>
 </body>
 
 </html>
