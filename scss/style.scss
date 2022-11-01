@@ -5,14 +5,14 @@ $secondary_black: #061424;
 $orange: #FE481C;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 50px;
+  min-height: 100px;
   max-width: 1100px;
   margin: auto;
   padding: 15px 0;
@@ -22,16 +22,18 @@ nav {
     display: flex;
     flex-basis: 50%;
     justify-content: space-evenly;
-    height: 1;
+  }
+
+  a {
+    font-size: 1rem;
   }
 
   a.logo {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
 
     span {
       color: $orange;
-      font-size: 2rem;
     }
   }
 
@@ -55,12 +57,12 @@ section.hero {
     'stats hero-img'
   ;
   grid-template-columns: 1fr 1fr;
-  padding: 0 16px;
+  max-width: 1100px;
   margin: auto;
 
   .intro {
     grid-area: intro;
-    padding: 50px 0;
+    padding: 50px 50px 50px 0;
     display: flex;
     flex-direction: column;
     row-gap: 32px;
@@ -79,13 +81,13 @@ section.hero {
 
       a {
         display: block;
-        padding: 16px 20px;
+        padding: 16px 32px;
         transition: .3s;
 
         &.hire-me {
           background-color: $orange;
           color: white;
-          
+
           &:hover {
             background-color: adjust-color($color: $orange, $lightness: -10%);
           }
@@ -106,7 +108,8 @@ section.hero {
       .info {
         p:nth-child(1) {
           font-weight: bold;
-          font-size: 1.5Rem;
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
         }
       }
     }
@@ -119,12 +122,13 @@ section.hero {
     align-items: center;
     background-color: $secondary_black;
     color: white;
-    padding: 32px 16px;
+    padding: 32px 32px  32px 32px;
+
     .data {
       &-item {
         display: flex;
         justify-content: space-between;
-        padding: 8px 0;
+        padding: 16px 0;
         border-bottom: solid #474242;
       }
     }
@@ -132,6 +136,7 @@ section.hero {
 
   .hero-img {
     grid-area: hero-img;
+    place-self: center;
     img {
       width: 100%;
     }
