@@ -5,6 +5,8 @@ a {
 
 html {
   overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -18,20 +20,31 @@ nav {
   min-height: 100px;
   max-width: 1100px;
   margin: auto;
-  padding: 15px 0;
+  padding: 15px 16px;
   border-bottom: solid #e1e1e1;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: white;
 }
 nav .nav-links {
   display: flex;
   flex-basis: 50%;
   justify-content: space-evenly;
+  list-style: none;
 }
 nav a {
   font-size: 1rem;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: #FE481C;
 }
 nav a.logo {
   font-size: 2rem;
   font-weight: bold;
+  color: #000;
 }
 nav a.logo span {
   color: #FE481C;
@@ -39,11 +52,14 @@ nav a.logo span {
 nav a.lets-chat {
   border: 1px solid black;
   padding: 16px 32px;
-  transition: 0.3s;
 }
 nav a.lets-chat:hover {
   background-color: black;
   color: white;
+}
+
+main {
+  padding: 0 16px;
 }
 
 section.hero {
@@ -66,6 +82,10 @@ section.hero .intro h1 {
 }
 section.hero .intro p {
   font-size: 1.2rem;
+  line-height: 1.2;
+}
+section.hero .intro p span {
+  font-weight: bold;
 }
 section.hero .intro .links {
   display: flex;
@@ -117,6 +137,55 @@ section.hero .hero-img {
 }
 section.hero .hero-img img {
   width: 100%;
+}
+
+article.works {
+  max-width: 1100px;
+  margin: 2rem auto;
+}
+article.works .works-swiper {
+  margin-top: 1.5rem;
+}
+article.works .works-swiper .swiper-slide {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: stretch;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+article.works .works-swiper .swiper-slide img {
+  width: 100%;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+}
+article.works .works-swiper .swiper-slide a {
+  color: white;
+}
+article.works .works-swiper .swiper-slide a.disabled {
+  pointer-events: none;
+  color: #cfcfcf;
+}
+article.works .works-swiper .swiper-slide .text {
+  padding: 1rem 0;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  display: grid;
+  place-items: center;
+  color: white;
+  z-index: 1;
+  opacity: 0;
+  transition: 0.3s;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+article.works .works-swiper .swiper-slide .platform {
+  display: flex;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+}
+article.works .works-swiper .swiper-slide:hover .text {
+  opacity: 1;
 }
 
 .loading-container {

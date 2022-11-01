@@ -6,10 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="https://kit.fontawesome.com/3f0daba817.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="./img/dias.jpeg" type="image/x-icon">
 
+  <script src="https://kit.fontawesome.com/3f0daba817.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
+  <!-- aos -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
@@ -18,30 +26,12 @@
 
 <body>
 
-  <div class="loading-container">
-    <!-- Put the loading html here -->
-    <div class="lds-grid">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-
-    <!-- and then go to loading.scss and paste the css code there -->
-
-  </div>
-
-  <nav>
+  <nav data-aos="fade-down" data-aos-duration="1000">
     <a href="#" class="logo">Dias Utsman<span>.</span></a>
 
     <ul class="nav-links">
       <li><a href="#">Home</a></li>
-      <li><a href="#">Works</a></li>
+      <li><a href="#works">Works</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Projects</a></li>
       <li><a href="#">Services</a></li>
@@ -53,11 +43,11 @@
   <main>
     <section class="hero">
       <div class="intro">
-        <h1>Hi! I Am Dias Utsman</h1>
-        <p>Developing Apps and Websites for over <strong>2 years</strong> as a software developer</p>
+        <h1 id="typeIt"></h1>
+        <p id="typeIt1"></p>
 
         <div class="links">
-          <a href="" class="hire-me">Hire Me</a>
+          <a href="https://www.linkedin.com/in/dias-utsman" target="_blank" class="hire-me">Hire Me</a>
           <a target="_blank" href="https://github.com/diasutsman?tab=repositories" class="projects">
             Projects
             <i aria-hidden="true" class="fa-solid fa-up-right-from-square"></i>
@@ -71,7 +61,7 @@
           </div>
 
           <div class="info">
-            <p id="projectDone">...</p>
+            <p id="projectDone"></p>
             <p>Project Done</p>
           </div>
 
@@ -90,17 +80,17 @@
         <div class="data">
           <div class="data-item">
             <p>Websites</p>
-            <p>60</p>
+            <p id="webCount"></p>
           </div>
 
           <div class="data-item">
             <p>Mobile App</p>
-            <p>30</p>
+            <p id="appCount"></p>
           </div>
 
           <div class="data-item">
             <p>Flutter App</p>
-            <p>20</p>
+            <p id="flutterCount"></p>
           </div>
         </div>
       </div>
@@ -110,8 +100,107 @@
         <img src="./img/dias.jpeg" alt="Dias Utsman">
       </div>
     </section>
+
+    <article class="works" id="works">
+      <h1>Works</h1>
+      <div class="swiper works-swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="text">
+              <p>Weather App</p>
+              <div class="platform">
+                <a href="https://github.com/diasutsman/weather-app" target="_blank">Flutter</a>
+                <a href="https://github.com/diasutsman/WeatherApp" target="_blank">Android</a>
+              </div>
+            </div>
+            <img src="./img/weather-app.webp" alt="Weather">
+          </div>
+          <div class="swiper-slide">
+            <div class="text">
+              <p>Notes App</p>
+              <div class="platform">
+                <a aria-disabled="true" target="_blank" class="disabled">Flutter</a>
+                <a href="https://github.com/diasutsman/NotesApp" target="_blank">Android</a>
+              </div>
+            </div>
+            <img src="./img/notes-app.webp" alt="Notes App">
+          </div>
+          <div class="swiper-slide">
+            <div class="text">
+              <p>Alarm App</p>
+              <div class="platform">
+                <a href="" aria-disabled="true" class="disabled" target="_blank">Flutter</a>
+                <a href="https://github.com/diasutsman/SmartAlarm" target="_blank">Android</a>
+              </div>
+            </div>
+            <img src="./img/alarm-app.webp" alt="">
+          </div>
+          <div class="swiper-slide">
+            <div class="text">
+              <p>Food App</p>
+              <div class="platform">
+                <a href="" aria-disabled="true" class="disabled" target="_blank">Flutter</a>
+                <a href="https://github.com/diasutsman/RecipeApp" target="_blank">Android</a>
+              </div>
+            </div>
+            <img src="./img/food-app.webp" alt="">
+          </div>
+          <div class="swiper-slide">
+            <div class="text">
+              <p>News App</p>
+              <div class="platform">
+                <a href="" aria-disabled="true" class="disabled" target="_blank">Flutter</a>
+                <a href="https://github.com/diasutsman/NewsApp" target="_blank">Android</a>
+              </div>
+            </div>
+            <img src="./img/news-app.webp" alt="">
+          </div>
+          <div class="swiper-slide">
+            <div class="text">
+              <p>Portfolio App</p>
+              <div class="platform">
+                <a href="" aria-disabled="true" class="disabled" target="_blank">Flutter</a>
+                <a href="https://github.com/diasutsman/Portofolio" target="_blank">Android</a>
+              </div>
+            </div>
+            <img src="./img/portfolio-app.webp" alt="">
+          </div>
+          <div class="swiper-slide">
+            <div class="text">
+              <p>Kisak Nabi App</p>
+              <div class="platform">
+                <a href="" aria-disabled="true" class="disabled" target="_blank">Flutter</a>
+                <a href="https://github.com/diasutsman/KisahNabiApp" target="_blank">Android</a>
+              </div>
+            </div>
+            <img src="./img/kisah-nabi-app.webp" alt="">
+          </div>
+          <div class="swiper-slide">
+            <div class="text">
+              <p>Doa dan Dzikir App</p>
+              <div class="platform">
+                <a href="" aria-disabled="true" class="disabled" target="_blank">Flutter</a>
+                <a href="https://github.com/diasutsman/Doa_dan_Dzikir" target="_blank">Android</a>
+              </div>
+            </div>
+            <img src="./img/doa-dzikir-app.webp" alt="">
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </article>
   </main>
 
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="./js/vanilla-tilt.min.js"></script>
   <script src="./js/script.js"></script>
 </body>
 
