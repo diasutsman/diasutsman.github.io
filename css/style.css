@@ -1,0 +1,113 @@
+a {
+  color: black;
+  text-decoration: none;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 50px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 15px 0;
+  border-bottom: solid #e1e1e1;
+}
+nav .nav-links {
+  display: flex;
+  flex-basis: 50%;
+  justify-content: space-evenly;
+  height: 1;
+}
+nav a.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+nav a.logo span {
+  color: #FE481C;
+  font-size: 2rem;
+}
+nav a.lets-chat {
+  border: 1px solid black;
+  padding: 16px 32px;
+  transition: 0.3s;
+}
+nav a.lets-chat:hover {
+  background-color: black;
+  color: white;
+}
+
+section.hero {
+  display: grid;
+  grid-template-areas: "intro hero-img" "intro hero-img" "stats hero-img";
+  grid-template-columns: 1fr 1fr;
+  padding: 0 16px;
+  margin: auto;
+}
+section.hero .intro {
+  grid-area: intro;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+}
+section.hero .intro h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+section.hero .intro p {
+  font-size: 1.2rem;
+}
+section.hero .intro .links {
+  display: flex;
+}
+section.hero .intro .links a {
+  display: block;
+  padding: 16px 20px;
+  transition: 0.3s;
+}
+section.hero .intro .links a.hire-me {
+  background-color: #FE481C;
+  color: white;
+}
+section.hero .intro .links a.hire-me:hover {
+  background-color: #e62e01;
+}
+section.hero .intro .links a:hover {
+  background-color: black;
+  color: white;
+}
+section.hero .intro .infos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+section.hero .intro .infos .info p:nth-child(1) {
+  font-weight: bold;
+  font-size: 1.5Rem;
+}
+section.hero .stats {
+  display: grid;
+  grid-area: stats;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background-color: #061424;
+  color: white;
+  padding: 32px 16px;
+}
+section.hero .stats .data-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: solid #474242;
+}
+section.hero .hero-img {
+  grid-area: hero-img;
+}
+section.hero .hero-img img {
+  width: 100%;
+}
