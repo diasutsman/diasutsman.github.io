@@ -145,11 +145,20 @@ article.projects {
   margin: 2rem auto;
 }
 article.projects h1 {
-  margin-bottom: 2rem;
   font-size: 2rem;
+}
+article.projects h2 {
+  margin-top: 2rem;
 }
 article.projects .projects-swiper {
   margin-top: 1.5rem;
+}
+article.projects .projects-swiper .swiper-button {
+  color: #FE481C;
+  font-weight: 900;
+}
+article.projects .projects-swiper .swiper-pagination-bullet-active {
+  background-color: #FE481C;
 }
 article.projects .projects-swiper .swiper-slide {
   display: grid;
@@ -158,12 +167,16 @@ article.projects .projects-swiper .swiper-slide {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  place-content: center;
+  place-content: stretch;
+  height: auto;
 }
 article.projects .projects-swiper .swiper-slide img {
   width: 100%;
   grid-column: 1/-1;
   grid-row: 1/-1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
 }
 article.projects .projects-swiper .swiper-slide a {
   color: white;
@@ -173,7 +186,6 @@ article.projects .projects-swiper .swiper-slide a.disabled {
   color: #cfcfcf;
 }
 article.projects .projects-swiper .swiper-slide .text {
-  padding: 1rem 0;
   grid-column: 1/-1;
   grid-row: 1/-1;
   display: grid;

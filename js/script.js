@@ -2,18 +2,20 @@ function getProjectsCount() {
     return fetch('https://api.github.com/users/diasutsman', {
         headers: {
             'Accept': 'application/vnd.github+json',
-            'Authorization': `Bearer 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`
+            'Authorization': `Bearer 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`
         }
     })
         .then(res => res.json())
-        .then(data => data['public_repos'])
+        .then(data => {
+            return data['public_repos']
+        })
 }
 
 function getRepoCountByLang(lang) {
     return fetch(`https://api.github.com/search/repositories?q=user:diasutsman%20language:${lang}`, {
         headers: {
             'Accept': 'application/vnd.github+json',
-            'Authorization': `Bearer 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`
+            'Authorization': `Bearer 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`
         }
     })
         .then(res => res.json())
@@ -35,39 +37,6 @@ function getFlutterAppsCount() {
     return getRepoCountByLang('dart')
 }
 
-async function updateUI() {
-    //    document.body.innerHTML += `
-    //    <div class="loading-container">
-    //    <!-- Put the loading html here -->
-    //    <div class="lds-grid">
-    //      <div></div>
-    //      <div></div>
-    //      <div></div>
-    //      <div></div>
-    //      <div></div>
-    //      <div></div>
-    //      <div></div>
-    //      <div></div>
-    //      <div></div>
-    //    </div>
-
-    //    <!-- and then go to loading.scss and paste the css code there -->
-
-    //  </div>`
-
-    try {
-
-        typeTheData('#projectDone', await getProjectsCount())
-        typeTheData('#webCount', await getWebsCount())
-        typeTheData('#appCount', await getMobileAppsCount())
-        typeTheData('#flutterCount', await getFlutterAppsCount())
-    } catch (error) {
-        console.log(error)
-    } finally {
-        //removeLoading()
-    }
-}
-
 function removeLoading() {
     const loading = document.querySelector('.loading-container')
     loading.classList.add('fade-out')
@@ -75,15 +44,27 @@ function removeLoading() {
     loading.addEventListener('animationend', () => loading.remove())
 }
 
-function typeTheData(el, ...text) {
+async function typeAfterResolve(el, promise) {
     new TypeIt(el, {
         speed: 100,
-        afterComplete: (instance) => {
-            instance.destroy()
+        afterComplete: async (ins) => {
+            ins.destroy()
+            let instance, data
+            try {
+                data = await promise
+                instance = new TypeIt(el, {
+                    speed: 100,
+                    afterComplete: ins => ins.destroy(),
+                })
+                instance.type(data)
+            } catch (error) {
+                instance.type('Cannot count')
+            }
+            instance.go()
         }
     })
+        .type('counting...')
         .delete()
-        .type('' + text)
         .go()
 }
 
@@ -104,6 +85,11 @@ function typeIt() {
 
 function applyAnimations() {
     typeIt()
+    typeAfterResolve('#projectDone', getProjectsCount())
+    typeAfterResolve('#webCount', getWebsCount())
+    typeAfterResolve('#appCount', getMobileAppsCount())
+    typeAfterResolve('#flutterCount', getFlutterAppsCount())
+
     // AOS
     AOS.init()
 
@@ -112,6 +98,11 @@ function applyAnimations() {
         direction: 'horizontal',
         spaceBetween: 16,
         slidesPerView: '1',
+        autoplay: {
+            delay: 1500,
+            disableOnInteraction: false
+        },
+        loop: true,
 
         breakpoints: {
             // when window width is >= 320px
@@ -148,8 +139,6 @@ function applyAnimations() {
         },
     });
 }
-
-updateUI()
 
 VanillaTilt.init(document.querySelector('.hero-img'), {
     reverse: true,

@@ -175,23 +175,38 @@ article.projects {
   margin: 2rem auto;
 
   h1 {
-    margin-bottom: 2rem;
     font-size: 2rem;
+  }
+  
+  h2 {
+    margin-top: 2rem;
   }
 
   .projects-swiper {
     margin-top: 1.5rem;
 
+    .swiper-button {
+      color: $orange;
+      font-weight: 900;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: $orange;
+    }
+
     .swiper-slide {
       display: grid;
       grid-template-columns: 1fr;
       user-select: none;
-      place-content: center;
+      place-content: stretch;
+      height: auto;
 
       img {
         width: 100%;
         grid-column: 1/-1;
         grid-row: 1/-1;
+        object-fit: cover;
+        height: 100%;
       }
 
       a {
@@ -204,7 +219,6 @@ article.projects {
       }
 
       .text {
-        padding: 1rem 0;
         grid-column: 1/-1;
         grid-row: 1/-1;
         display: grid;
