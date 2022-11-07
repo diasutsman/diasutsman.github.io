@@ -17,18 +17,18 @@ const certsSlide = new Swiper('.certs-swiper', {
 });
 
 const certsImages = [
-    "./img/dicoding/android-pemula.jpg",
-    "./img/dicoding/architecting-on-aws.jpg",
-    "./img/dicoding/aws-partitioner.jpg",
-    "./img/dicoding/back-end-aws.png",
-    "./img/dicoding/back-end-fundamental.jpg",
-    "./img/dicoding/back-end-google-cloud.jpg",
-    "./img/dicoding/c.jpg",
-    "./img/dicoding/flutter.png",
-    "./img/dicoding/front-end-pemula.png",
-    "./img/dicoding/java.jpg",
-    "./img/dicoding/js-dicoding-cert.jpg",
-    "./img/dicoding/solid.jpg",
+    "./img/dicoding/android-pemula.webp",
+    "./img/dicoding/architecting-on-aws.webp",
+    "./img/dicoding/aws-partitioner.webp",
+    "./img/dicoding/back-end-aws.webp",
+    "./img/dicoding/back-end-fundamental.webp",
+    "./img/dicoding/back-end-google-cloud.webp",
+    "./img/dicoding/c.webp",
+    "./img/dicoding/flutter.webp",
+    "./img/dicoding/front-end-pemula.webp",
+    "./img/dicoding/java.webp",
+    "./img/dicoding/js-dicoding-cert.webp",
+    "./img/dicoding/solid.webp",
 ];
 
 certsImages.forEach((certsImage) => {
