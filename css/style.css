@@ -14,110 +14,140 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 100px;
-  max-width: 1100px;
-  margin: auto;
-  padding: 15px 16px;
-  border-bottom: solid #e1e1e1;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
+  left: 0;
+  right: 0;
   top: 0;
   z-index: 100;
   background-color: white;
 }
-nav .nav-links {
+nav .nav-content {
   display: flex;
-  flex-basis: 50%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: auto;
+  padding: 15px 16px;
+  border-bottom: solid #e1e1e1;
+}
+nav .nav-content .nav-links {
+  display: flex;
+  flex-basis: 65%;
   justify-content: space-evenly;
   list-style: none;
 }
-nav a {
+nav .nav-content .nav-collapse {
+  display: flex;
+  flex-grow: 1;
+  flex-basis: auto;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .nav-content a {
   font-size: 1rem;
   transition: 0.3s;
 }
-nav a:hover {
+nav .nav-content a:hover {
   color: #FE481C;
 }
-nav a.logo {
+nav .nav-content a.logo {
   font-size: 2rem;
   font-weight: bold;
   color: #000;
 }
-nav a.logo span {
+nav .nav-content a.logo span {
   color: #FE481C;
 }
-nav a.lets-chat {
+nav .nav-content a.lets-chat {
   border: 1px solid black;
   padding: 16px 32px;
 }
-nav a.lets-chat:hover {
+nav .nav-content a.lets-chat:hover {
   background-color: black;
   color: white;
 }
 
 main {
-  padding: 0 16px;
+  padding: 87px 16px 0 16px;
 }
 
-section.hero {
+.hero,
+.projects,
+.skills,
+.certificates {
+  max-width: 1100px;
+  margin: 4rem auto;
+}
+
+.hero {
   display: grid;
   grid-template-areas: "intro hero-img" "intro hero-img" "stats hero-img";
   grid-template-columns: 1fr 1fr;
-  max-width: 1100px;
   margin: auto;
 }
-section.hero .intro {
+.hero .intro {
   grid-area: intro;
   padding: 50px 50px 50px 0;
   display: flex;
   flex-direction: column;
   row-gap: 32px;
 }
-section.hero .intro h1 {
+.hero .intro h1 {
   font-size: 4rem;
   font-weight: bold;
 }
-section.hero .intro p {
+.hero .intro p {
   font-size: 1.2rem;
   line-height: 1.2;
 }
-section.hero .intro p span {
+.hero .intro p span {
   font-weight: bold;
 }
-section.hero .intro .links {
+.hero .intro .links {
   display: flex;
 }
-section.hero .intro .links a {
+.hero .intro .links a {
   display: block;
   padding: 16px 32px;
   transition: 0.3s;
 }
-section.hero .intro .links a.hire-me {
+.hero .intro .links a.hire-me {
   background-color: #FE481C;
   color: white;
 }
-section.hero .intro .links a.hire-me:hover {
+.hero .intro .links a.hire-me:hover {
   background-color: #e62e01;
 }
-section.hero .intro .links a:hover {
+.hero .intro .links a:hover {
   background-color: black;
   color: white;
 }
-section.hero .intro .infos {
+.hero .intro .infos {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
 }
-section.hero .intro .infos .info p:nth-child(1) {
+.hero .intro .infos .info p:nth-child(1) {
   font-weight: bold;
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-section.hero .stats {
+.hero .stats {
   display: grid;
   grid-area: stats;
   grid-template-columns: 1fr 1fr;
@@ -126,41 +156,34 @@ section.hero .stats {
   color: white;
   padding: 32px 32px 32px 32px;
 }
-section.hero .stats .data-item {
+.hero .stats .data-item {
   display: flex;
   justify-content: space-between;
   padding: 16px 0;
   border-bottom: solid #474242;
 }
-section.hero .hero-img {
+.hero .hero-img {
   grid-area: hero-img;
   place-self: center;
 }
-section.hero .hero-img img {
+.hero .hero-img img {
   width: 100%;
 }
 
-article.projects {
-  max-width: 1100px;
-  margin: 2rem auto;
-}
-article.projects h1 {
-  font-size: 2rem;
-}
-article.projects h2 {
+.projects h2 {
   margin-top: 2rem;
 }
-article.projects .projects-swiper {
+.projects .projects-swiper {
   margin-top: 1.5rem;
 }
-article.projects .projects-swiper .swiper-button {
+.projects .projects-swiper .swiper-button {
   color: #FE481C;
   font-weight: 900;
 }
-article.projects .projects-swiper .swiper-pagination-bullet-active {
+.projects .projects-swiper .swiper-pagination-bullet-active {
   background-color: #FE481C;
 }
-article.projects .projects-swiper .swiper-slide {
+.projects .projects-swiper .swiper-slide {
   display: grid;
   grid-template-columns: 1fr;
   -webkit-user-select: none;
@@ -170,7 +193,7 @@ article.projects .projects-swiper .swiper-slide {
   place-content: stretch;
   height: auto;
 }
-article.projects .projects-swiper .swiper-slide img {
+.projects .projects-swiper .swiper-slide img {
   width: 100%;
   grid-column: 1/-1;
   grid-row: 1/-1;
@@ -178,14 +201,14 @@ article.projects .projects-swiper .swiper-slide img {
      object-fit: cover;
   height: 100%;
 }
-article.projects .projects-swiper .swiper-slide a {
+.projects .projects-swiper .swiper-slide a {
   color: white;
 }
-article.projects .projects-swiper .swiper-slide a.disabled {
+.projects .projects-swiper .swiper-slide a.disabled {
   pointer-events: none;
   color: #cfcfcf;
 }
-article.projects .projects-swiper .swiper-slide .text {
+.projects .projects-swiper .swiper-slide .text {
   grid-column: 1/-1;
   grid-row: 1/-1;
   display: grid;
@@ -198,110 +221,145 @@ article.projects .projects-swiper .swiper-slide .text {
   align-content: center;
   row-gap: 32px;
 }
-article.projects .projects-swiper .swiper-slide .platform {
+.projects .projects-swiper .swiper-slide .platform {
   display: flex;
   -moz-column-gap: 16px;
        column-gap: 16px;
 }
-article.projects .projects-swiper .swiper-slide:hover .text {
+.projects .projects-swiper .swiper-slide:hover .text {
   opacity: 1;
 }
 
-.loading-container {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: fixed;
-  background-color: white;
+.certificates .certs-swiper {
+  overflow-x: hidden;
+  padding: 16px;
+}
+.certificates .certs-swiper > .swiper-wrapper {
+  transition-timing-function: linear;
+}
+.certificates .certs-swiper .swiper-slide img {
+  border-radius: 20px;
+  transition: 0.5s;
+}
+.certificates .certs-swiper .swiper-slide img:hover {
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.skills {
+  /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+  /* This container is needed to position the front and back side */
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  /* Position the front and back side */
+  /* Style the front side (fallback if image is missing) */
+  /* Style the back side */
+}
+.skills .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.skills .percentage {
+  width: 80%;
+  height: 10px;
+  background-color: #e1e1e1;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.skills .percentage .progress {
+  height: 100%;
+  background-color: #FE481C;
+}
+.skills .flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 250px;
+  perspective: 1000px;
+}
+.skills .flip-card h1 {
+  margin-bottom: 0;
+}
+.skills .flip-card img {
+  width: 50%;
+}
+.skills .flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.skills .flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.skills .flip-card-front,
+.skills .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 16px;
 }
-.loading-container .lds-grid {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
+.skills .flip-card-front {
+  color: black;
 }
-.loading-container .lds-grid div {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: #FE481C;
-  -webkit-animation: lds-grid 1.2s linear infinite;
-          animation: lds-grid 1.2s linear infinite;
+.skills .flip-card-back {
+  transform: rotateY(180deg);
 }
-.loading-container .lds-grid div:nth-child(1) {
-  top: 8px;
-  left: 8px;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
+
+footer {
+  font-size: 1.3rem;
+  color: white;
+  padding: 0 16px;
+  background-color: #061424;
 }
-.loading-container .lds-grid div:nth-child(2) {
-  top: 8px;
-  left: 32px;
-  -webkit-animation-delay: -0.4s;
-          animation-delay: -0.4s;
+footer .content {
+  display: grid;
+  grid-template-columns: repeat(auto, minmax(300px, 1fr));
+  grid-template-areas: "contact maps" "copy copy";
+  max-width: 1100px;
+  margin: auto;
+  align-content: flex-start;
 }
-.loading-container .lds-grid div:nth-child(3) {
-  top: 8px;
-  left: 56px;
-  -webkit-animation-delay: -0.8s;
-          animation-delay: -0.8s;
+footer .content .contact {
+  grid-area: contact;
 }
-.loading-container .lds-grid div:nth-child(4) {
-  top: 32px;
-  left: 8px;
-  -webkit-animation-delay: -0.4s;
-          animation-delay: -0.4s;
+footer .content .maps {
+  grid-area: maps;
+  padding: 16px 0;
+  height: 300px;
 }
-.loading-container .lds-grid div:nth-child(5) {
-  top: 32px;
-  left: 32px;
-  -webkit-animation-delay: -0.8s;
-          animation-delay: -0.8s;
+footer .content .maps iframe {
+  width: 100%;
+  height: 100%;
 }
-.loading-container .lds-grid div:nth-child(6) {
-  top: 32px;
-  left: 56px;
-  -webkit-animation-delay: -1.2s;
-          animation-delay: -1.2s;
+footer .content .copy {
+  grid-area: copy;
+  padding: 32px;
+  text-align: center;
 }
-.loading-container .lds-grid div:nth-child(7) {
-  top: 56px;
-  left: 8px;
-  -webkit-animation-delay: -0.8s;
-          animation-delay: -0.8s;
+footer .content ul {
+  list-style: none;
 }
-.loading-container .lds-grid div:nth-child(8) {
-  top: 56px;
-  left: 32px;
-  -webkit-animation-delay: -1.2s;
-          animation-delay: -1.2s;
+footer .content ul li {
+  margin: 8px 0;
 }
-.loading-container .lds-grid div:nth-child(9) {
-  top: 56px;
-  left: 56px;
-  -webkit-animation-delay: -1.6s;
-          animation-delay: -1.6s;
+
+#typeIt {
+  min-height: 154.667px;
 }
-@-webkit-keyframes lds-grid {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-@keyframes lds-grid {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
+
+#typeIt1 {
+  min-height: 46.06px;
 }
 
 .fade-out {
@@ -327,4 +385,59 @@ article.projects .projects-swiper .swiper-slide:hover .text {
     opacity: 0;
     display: none;
   }
+}
+/* Hamburger menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -5px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #FE481C;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:last-child {
+  transform-origin: 0 100%;
+}
+
+/*
+  When input checked, 
+  select the siblings that matches the selectors then apply these style to it 
+*/
+.menu-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:last-child {
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
 }

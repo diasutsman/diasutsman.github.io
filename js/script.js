@@ -1,12 +1,15 @@
+const GITHUB_API_KEY = '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'
+
 function getProjectsCount() {
     return fetch('https://api.github.com/users/diasutsman', {
         headers: {
             'Accept': 'application/vnd.github+json',
-            'Authorization': `Bearer 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`
+            'Authorization': `Bearer ${GITHUB_API_KEY}`
         }
     })
         .then(res => res.json())
         .then(data => {
+            console.log(data)
             return data['public_repos']
         })
 }
@@ -15,7 +18,7 @@ function getRepoCountByLang(lang) {
     return fetch(`https://api.github.com/search/repositories?q=user:diasutsman%20language:${lang}`, {
         headers: {
             'Accept': 'application/vnd.github+json',
-            'Authorization': `Bearer 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`
+            'Authorization': `Bearer ${GITHUB_API_KEY}`
         }
     })
         .then(res => res.json())
@@ -93,7 +96,7 @@ function applyAnimations() {
     // AOS
     AOS.init()
 
-    const swiper = new Swiper('.swiper', {
+    new Swiper('.swiper', {
         // Optional parameters
         direction: 'horizontal',
         spaceBetween: 16,
@@ -140,22 +143,11 @@ function applyAnimations() {
     });
 }
 
-VanillaTilt.init(document.querySelector('.hero-img'), {
-    reverse: true,
-    max: 15,
-    speed: 400,
-    scale: 1.12,
-    glare: true,
-    reset: true,
-    perspective: 500,
-    transition: true,
-    "max-glare": 0.75,
-    "glare-prerender": false,
-    gyroscope: true,
-    gyroscopeMinAngleX: -45,
-    gyroscopeMaxAngleX: 45,
-    gyroscopeMinAngleY: -45,
-    gyroscopeMaxAngleY: 45
-});
-
 applyAnimations()
+
+const menuToggle = document.getElementById('menu-toggle')
+const navCollapse = document.querySelector('.nav-collapse')
+
+menuToggle.addEventListener('click', () => {
+    navCollapse.classList.toggle('show')
+})
