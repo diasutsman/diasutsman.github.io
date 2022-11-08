@@ -1,10 +1,10 @@
-const GITHUB_API_KEY = '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'
+const githubApiKey = config.GITHUB_API_KEY
 
 function getProjectsCount() {
     return fetch('https://api.github.com/users/diasutsman', {
         headers: {
             'Accept': 'application/vnd.github+json',
-            'Authorization': `Bearer ${GITHUB_API_KEY}`
+            //'Authorization': `Bearer ${githubApiKey}`
         }
     })
         .then(res => res.json())
@@ -18,7 +18,7 @@ function getRepoCountByLang(lang) {
     return fetch(`https://api.github.com/search/repositories?q=user:diasutsman%20language:${lang}`, {
         headers: {
             'Accept': 'application/vnd.github+json',
-            'Authorization': `Bearer ${GITHUB_API_KEY}`
+            //'Authorization': `Bearer ${githubApiKey}`
         }
     })
         .then(res => res.json())
