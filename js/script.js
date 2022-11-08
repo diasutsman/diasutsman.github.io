@@ -9,7 +9,6 @@ function getProjectsCount() {
     })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             return data['public_repos']
         })
 }
