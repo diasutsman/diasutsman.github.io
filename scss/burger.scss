@@ -30,26 +30,26 @@
 
 /* Hamburger Menu Animation */
 .menu-toggle span:nth-child(2) {
-  transform-origin: 0 0;
+  transform-origin: 100% 50%;
 }
 
 .menu-toggle span:last-child {
-  transform-origin: 0 100%;
+  transform-origin: 100% 50%;
 }
 
 /*
   When input checked, 
   select the siblings that matches the selectors then apply these style to it 
 */
-.menu-toggle input:checked ~ span:nth-child(2) {
-  transform: rotate(45deg) translate(-1px, -1px);
+.menu-toggle input:checked~span:nth-child(2) {
+  transform: rotate(-45deg) translate(1px, -2px);;
 }
 
-.menu-toggle input:checked ~ span:last-child {
-  transform: rotate(-45deg) translate(-1px, 0);
+.menu-toggle input:checked~span:last-child {
+  transform: rotate(45deg);
 }
 
-.menu-toggle input:checked ~ span:nth-child(3) {
+.menu-toggle input:checked~span:nth-child(3) {
   opacity: 0;
   transform: scale(0);
 }

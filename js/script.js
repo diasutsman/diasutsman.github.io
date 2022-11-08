@@ -1,4 +1,4 @@
-const GITHUB_API_KEY = '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'
+const GITHUB_API_KEY = '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'
 
 function getProjectsCount() {
     return fetch('https://api.github.com/users/diasutsman', {
