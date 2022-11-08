@@ -32,9 +32,6 @@
 section.hero #typeIt1 {
     min-height: 0;
   }
-  main {
-    padding-top: 71px;
-  }
   footer .content {
     grid-template-areas: "contact" "maps" "copy";
   }

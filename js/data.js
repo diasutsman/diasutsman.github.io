@@ -1,10 +1,10 @@
 const certsSlide = new Swiper('.certs-swiper', {
-    slidesPerView: 'auto',
+    slidesPerView: 1,
     spaceBetween: 20,
     loop: true,
-    speed: 1500,
+    speed: 2000,
     autoplay: {
-        delay: 1,
+        delay: 0,
         disableOnInteraction: false
     },
     breakpoints: {

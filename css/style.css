@@ -28,9 +28,8 @@ a {
 }
 
 nav {
-  position: fixed;
-  left: 0;
-  right: 0;
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
   z-index: 100;
   background-color: white;
@@ -83,7 +82,7 @@ nav .nav-content a.lets-chat:hover {
 }
 
 main {
-  padding: 87px 16px 0 16px;
+  padding: 0 16px;
 }
 
 .hero,
