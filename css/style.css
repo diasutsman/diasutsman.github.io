@@ -127,7 +127,7 @@ main {
 }
 .hero .intro .links a.hire-me {
   background-color: #FE481C;
-  color: #232323;
+  color: white;
 }
 .hero .intro .links a.hire-me:hover {
   background-color: #e62e01;

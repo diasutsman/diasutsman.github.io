@@ -145,7 +145,7 @@ main {
 
         &.hire-me {
           background-color: $orange;
-          color: #232323;
+          color: white;
 
           &:hover {
             background-color: adjust-color($color: $orange, $lightness: -10%);
