@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dias Utsman - Portfolio</title>
+  <link rel="stylesheet" href="dist/output.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Xanh+Mono:ital@0;1&display=swap"
+    rel="stylesheet">
+
+    <style>
+    
+    #details {
+      scrollbar-gutter: stable both-edges;
+    }
+    </style>
+</head>
+
+<!-- npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch -->
+
+<body>
+  <div class="h-screen overflow-clip text-white font-montserrat">
+    <div id="home"
+      class="h-screen bg-pink-600 flex justify-center items-center transition-transform duration-1000 ease-out relative"
+      data-index="1">
+
+      <div class="absolute top-0 left-0 w-[6%] h-full uppercase flex">
+        <div class="h-3/4 m-auto flex flex-col gap-10 justify-end">
+          <p class="-rotate-90 opacity-50 transition hover:opacity-100"><a href="https://linkedin.com/diasutsman" target="_blank">li</a></p>
+          <p class="-rotate-90 opacity-50 transition hover:opacity-100"><a href="https://github.com/diasutsman" target="_blank">gi</a></p>
+          <p class="-rotate-90 opacity-50 transition hover:opacity-100"><a href="https://medium.com/diasutsman" target="_blank">me</a></p>
+        </div>
+      </div>
+
+      <div class="container m-auto p-5 flex justify-center items-center flex-col">
+        <div class="flex gap-8 justify-center items-center">
+          <div class="2xl:text-4xl">
+            <h1 class="text-2xl 2xl:text-6xl">Dias Utsman</h1>
+            <p>Developing Apps and Websites for over 2 years as a software developer.</p>
+          </div>
+          <ul class="uppercase text-customVw" id="links">
+            <li class="hover:translate-x-1.5 transition-all duration-300 font-xanh hover:italic"><a href="#about"
+                onclick="toDetails()">About</a></li>
+            <li class="hover:translate-x-1.5 transition-all duration-300 font-xanh hover:italic"><a href="#works"
+                onclick="toDetails()">Works</a></li>
+            <li class="hover:translate-x-1.5 transition-all duration-300 font-xanh hover:italic"><a href="#contact"
+                onclick="toDetails()">Contact</a></li>
+          </ul>
+        </div>
+        <div class="absolute bottom-2 flex flex-col items-center gap-3 animate-bounce">
+          <p>Click to see more</p>
+          <a href="#" onclick="toDetails()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="details"
+      class="h-screen overflow-y-auto bg-pink-500 flex justify-center items-center transition-transform duration-1000 ease-out scroll-smooth scroll-pt-4 relative"
+      data-index="2">
+      <div class="container m-auto p-5 flex justify-center items-center gap-6 flex-col">
+        <div class="flex flex-col items-center gap-3 animate-bounce">
+          <a href="#" onclick="toHome()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+          </a>
+          <p>Go back top</p>
+        </div>
+        <section id="about" style="min-height: 500px">
+          <h1 class="text-2xl">About</h1>
+        </section>
+        <section id="works" style="min-height: 500px">
+          <h1 class="text-2xl">Works</h1>
+        </section>
+        <section id="contact" style="min-height: 500px">
+          <h1 class="text-2xl">Contact</h1>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="src/script.js"></script>
+</body>
+
+</html>
