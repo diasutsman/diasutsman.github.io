@@ -261,9 +261,25 @@
     })
   });
 
+  /** 
+   * calculate age
+  */
+
+  const calculateAge = (birthday) => {
+    let ageDifMs = Date.now() - birthday.getTime();
+    let ageDate = new Date(ageDifMs);
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+  }
+
   /**
    * Initiate Pure Counter 
    */
   new PureCounter();
+
+
+  /** 
+   * Initiate age counter
+  */
+  select('#myAge').innerText = calculateAge(new Date(2006, 7, 22));
 
 })()
