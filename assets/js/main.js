@@ -291,7 +291,7 @@
    * Initiate text that dynamically changes
   */
   select('#myAge').innerText = calculateAge(new Date(2006, 7, 22));
-  select('#hoursOfCode').dataset.purecounterEnd = calculateDays(new Date(2020, 3, 10)) * 3;
+  select('#hoursOfCode').dataset.purecounterEnd = calculateDays(new Date(2020, 6, 4)) * 3;
   select('#projects').dataset.purecounterEnd = await fetch('https://api.github.com/search/repositories?q=user:diasutsman%20topic:project')
     .then(response => response.json())
     .then(data => data.total_count);
