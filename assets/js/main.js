@@ -272,14 +272,25 @@
   }
 
   /**
+   * calculate days
+   */
+  const calculateDays = (date) => {
+    const today = new Date();
+    const difference = today - new Date(date);
+    return Math.floor(difference / (1000 * 60 * 60 * 24));
+  };
+  
+
+  /**
    * Initiate Pure Counter 
    */
   new PureCounter();
 
 
   /** 
-   * Initiate age counter
+   * Initiate text that dynamically changes
   */
   select('#myAge').innerText = calculateAge(new Date(2006, 7, 22));
+  select('#hoursOfCode').dataset.purecounterEnd = calculateDays(new Date(2020, 3, 10)) * 3;
 
 })()
