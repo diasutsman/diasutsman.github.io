@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Node Js",
+    "percentage": 90
+  },
+  {
+    "name": "Website",
+    "percentage": 95
+  },
+  {
+    "name": "React Js",
+    "percentage": 75
+  },
+  {
+    "name": "Express",
+    "percentage": 65
+  },
+  {
+    "name": "Hapi Js",
+    "percentage": 75
+  },
+  {
+    "name": "Android",
+    "percentage": 80
+  },
+  {
+    "name": "Flutter",
+    "percentage": 45
+  },
+  {
+    "name": "Firebase",
+    "percentage": 35
+  },
+  {
+    "name": "MongoDB",
+    "percentage": 50
+  }
+]

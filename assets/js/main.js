@@ -292,20 +292,42 @@
 		return Math.floor(difference / (1000 * 60 * 60 * 24));
 	};
 
+	// skill template
+	const skillTemplate = (skill) => `
+  <div class="progress col-lg-6">
+    <span class="skill">${skill.name} <i class="val">${skill.percentage}%</i></span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" role="progressbar" aria-valuenow="${skill.percentage}" aria-valuemin="0" aria-valuemax="100">
+      </div>
+    </div>
+  </div>
+  `;
+
 	/**
 	 * Initiate Pure Counter
 	 */
 	new PureCounter();
 
 	/**
-	 * Initiate text that dynamically changes
+	 * Initiate elements that dynamically changes
 	 */
+
+	// my age
 	select("#myAge").innerText = calculateAge(new Date(2006, 7, 22));
+
+	// hours of code
 	select("#hoursOfCode").dataset.purecounterEnd =
 		calculateDays(new Date(2020, 6, 4)) * 3;
+
+	// projects count
 	select("#projects").dataset.purecounterEnd = await fetch(
 		"https://api.github.com/search/repositories?q=user:diasutsman%20topic:project"
 	)
 		.then((response) => response.json())
 		.then((data) => data.total_count);
+
+	// skills
+	select(".skills-content").innerHTML = await fetch("/assets/json/skills.json")
+		.then((response) => response.json())
+		.then((data) => data.map((skill) => skillTemplate(skill)).join(""));
 })();
