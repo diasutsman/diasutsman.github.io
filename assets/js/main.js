@@ -337,7 +337,9 @@
     return `
     <div class="col-lg-4 col-md-6 portfolio-item filter-${portfolio.category}">
       <div class="portfolio-wrap">
-        <img src="${img}" class="img-fluid" alt="" style="min-height: 100px;">
+        <img src="${img}" class="img-fluid" alt="" onerror="
+          this.src='https://via.placeholder.com/600x338.png?text=${portfolio.name}';
+        ">
         <div class="portfolio-info">
           <h4>${portfolio.name}</h4>
           <p>${portfolio.category.replace(/[-_]/g, ' ')}</p>
