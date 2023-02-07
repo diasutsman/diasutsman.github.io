@@ -181,7 +181,6 @@ h6 {
 	height: 56px;
 	width: 100%;
 	overflow: hidden;
-	transition: 0.3s;
 }
 
 .nav-menu a i,
@@ -582,7 +581,6 @@ section {
 }
 
 .portfolio #portfolio-filters {
-	padding: 0;
 	margin: 0 auto 25px auto;
 	list-style: none;
 	text-align: center;
