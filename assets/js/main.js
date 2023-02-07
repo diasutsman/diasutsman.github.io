@@ -328,18 +328,24 @@
   `;
 
   const portfolioTemplate = (portfolio) => {
+    const img = {
+      web: `https://shot.screenshotapi.net/screenshot?token=WYVZZD3-YAKMV0T-P291HFD-5DMZ6MY&url=${portfolio.homepage || portfolio.html_url}&output=image&file_type=png&wait_for_event=load`,
+      android: `https://raw.githubusercontent.com/${portfolio.full_name}/${portfolio.default_branch}/img.webp`,
+      flutter: `https://raw.githubusercontent.com/${portfolio.full_name}/${portfolio.default_branch}/img.webp`,
+      'back-end': `https://raw.githubusercontent.com/${portfolio.full_name}/${portfolio.default_branch}/img.webp`,
+    }[portfolio.category] || 'assets/img/portfolio/portfolio-1.webp';
     return `
     <div class="col-lg-4 col-md-6 portfolio-item filter-${portfolio.category}">
       <div class="portfolio-wrap">
-        <img src="${portfolio.category === 'web' ? `https://api.screenshotmachine.com/?key=715404&url=${portfolio.homepage}&dimension=1920x1080` : 'assets/img/portfolio/portfolio-1.webp'}" class="img-fluid" alt="">
+        <img src="${img}" class="img-fluid" alt="" style="min-height: 100px;">
         <div class="portfolio-info">
           <h4>${portfolio.name}</h4>
           <p>${portfolio.category.replace(/[-_]/g, ' ')}</p>
           <div class="portfolio-links">
-            <a href="assets/img/portfolio/portfolio-1.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="
+            <a href="${img}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="
               ${portfolio.name}
             "><i class="bx bx-plus"></i></a>
-            <a href="${portfolio.html_url}" target="_blank"><i class="bx bx-link"></i></a>
+            <a href="${{ 'web': portfolio.homepage }[portfolio.category] || portfolio.html_url}" target="_blank"><i class="bx bx-link"></i></a>
           </div>
         </div>
       </div>
