@@ -195,9 +195,12 @@
         );
 
     select('.portfolio-wrap img', true).forEach((img) => {
-      img.onload = () => new Isotope(portfolioContainer, {
-        itemSelector: ".portfolio-item",
-      }).arrange({ filter: '*' });;
+      img.onload = () => {
+        new Isotope(portfolioContainer, {
+          itemSelector: ".portfolio-item",
+        }).arrange({ filter: '*' });;
+        img.onload = null;
+      }
     });
 
 
