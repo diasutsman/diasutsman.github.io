@@ -231,12 +231,11 @@
 						<div class="col-lg-3 col-md-6 mt-5 mt-md-0">
 							<div class="count-box">
 								<i class="bi bi-journal-richtext"></i>
-								<span
-									data-purecounter-start="0"
-									data-purecounter-duration="1"
-									class="purecounter"
-									id="projects"
-								></span>
+								<span id="projects">
+									<div class="spinner-border text-primary border-1" role="status">
+										<span class="visually-hidden">Loading...</span>
+									</div>
+								</span>
 								<p>Projects</p>
 							</div>
 						</div>
@@ -285,7 +284,6 @@
 					</div>
 
 					<div class="row skills-content">
-
 						<div class="progress col-lg-6">
 							<span class="skill">HTML <i class="val">100%</i></span>
 							<div class="progress-bar-wrap">
@@ -389,7 +387,6 @@
 								></div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</section>
@@ -520,6 +517,11 @@
 						data-aos="fade-up"
 						data-aos-delay="200"
 					>
+						<div class="d-flex justify-content-center">
+							<div class="spinner-border text-primary" role="status">
+								<span class="visually-hidden">Loading...</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -1017,7 +1019,7 @@
 		<script src="assets/vendor/typed.js/typed.min.js"></script>
 		<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
 		<script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/normalize-text"></script>
+		<script src="https://cdn.jsdelivr.net/npm/normalize-text"></script>
 
 		<!-- Template Main JS File -->
 		<script src="assets/js/main.js"></script>
