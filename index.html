@@ -232,7 +232,10 @@
 							<div class="count-box">
 								<i class="bi bi-journal-richtext"></i>
 								<span id="projects">
-									<div class="spinner-border text-primary border-1" role="status">
+									<div
+										class="spinner-border text-primary border-1"
+										role="status"
+									>
 										<span class="visually-hidden">Loading...</span>
 									</div>
 								</span>
@@ -892,10 +895,10 @@
 
 						<div class="col-lg-8 mt-5 mt-lg-0">
 							<form
-								action="forms/contact.php"
 								method="post"
+								action="https://postmail.invotes.com/send"
 								role="form"
-								class="php-email-form"
+								class="php-email-form email-form"
 							>
 								<div class="row">
 									<div class="col-md-6 form-group">
@@ -932,7 +935,7 @@
 								<div class="form-group mt-3">
 									<textarea
 										class="form-control"
-										name="message"
+										name="text"
 										rows="5"
 										placeholder="Message"
 										required
@@ -946,7 +949,15 @@
 									</div>
 								</div>
 								<div class="text-center">
-									<button type="submit">Send Message</button>
+									<input
+										type="hidden"
+										name="access_token"
+										value="rv8j048v00ae8ho7d8ofmu7c"
+									/>
+
+									<input type="hidden" name="success_url" value="." />
+									<input type="hidden" name="error_url" value=".?err=1" />
+									<button type="submit" value="Send" class="send-email">Send Message</button>
 								</div>
 							</form>
 						</div>
@@ -1018,7 +1029,6 @@
 		<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 		<script src="assets/vendor/typed.js/typed.min.js"></script>
 		<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-		<script src="assets/vendor/php-email-form/validate.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/normalize-text"></script>
 
 		<!-- Template Main JS File -->

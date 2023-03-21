@@ -438,4 +438,35 @@
 	select(".skills-content").innerHTML = await fetch("/assets/json/skills.json")
 		.then((response) => response.json())
 		.then((data) => data.map((skill) => skillTemplate(skill)).join(""));
+
+    // contact
+    select('.email-form').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const button = select('.email-form .send-email');
+        const {innerText} = button;
+
+        button.disabled = true;
+        button.innerText = 'Sending...';
+        button.classList.add('bg-secondary');
+
+        const formData = new FormData(event.target);
+        formData.set('text', `From: ${formData.get('email')} (${formData.get('name')})` + '\n' + formData.get('text'));
+
+        await fetch(event.target.action, {
+            method: event.target.method,
+            headers: {
+                "Content-type": "application/x-www-form-urlencoded"
+            },
+            body: new URLSearchParams(formData)
+        })
+
+        button.classList.add('bg-success');
+
+        button.innerText = 'Sent!';
+        setTimeout(() => {
+            button.innerText = innerText;
+            button.disabled = false;
+            button.classList.remove('bg-secondary', 'bg-success');
+        }, 1000);
+    })
 })();
