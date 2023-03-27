@@ -34,7 +34,7 @@ const certsImages = [
 certsImages.forEach((certsImage) => {
     certsSlide.appendSlide(`
         <div class="swiper-slide">
-            <img src="${certsImage}" alt="certs-image">
+            <img loading="lazy" src="${certsImage}" alt="certs-image">
         </div>
     `);
 })
@@ -103,7 +103,7 @@ skillsContent.innerHTML = skills.map(skill => {
     return `<div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <img src="${skill.image}" alt="${skill.name}">
+        <img loading="lazy" src="${skill.image}" alt="${skill.name}">
         <p>${skill.name}</p>
       </div>
       <div class="flip-card-back">

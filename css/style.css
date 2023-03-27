@@ -237,7 +237,6 @@ main {
   transition-timing-function: linear;
 }
 .certificates .certs-swiper .swiper-slide img {
-  border-radius: 20px;
   transition: 0.5s;
 }
 .certificates .certs-swiper .swiper-slide img:hover {
