@@ -222,18 +222,11 @@
 		});
 	}
 
-	/**
-	 * Porfolio isotope and filter
-	 */
+	// /**
+	//  * Porfolio isotope and filter
+	//  */
 	window.addEventListener("load", async () => {
 		let portfolioContainer = select(".portfolio-container");
-		portfolioContainer.innerHTML = await fetchPortfolio();
-
-		setTimeout(() => {
-			new Isotope(portfolioContainer, {
-				itemSelector: ".portfolio-item",
-			}).arrange({ filter: "*" });
-		}, 1500);
 
 		if (portfolioContainer) {
 			let portfolioIsotope = new Isotope(portfolioContainer, {
@@ -262,22 +255,21 @@
 				true
 			);
 		}
+	});
+	/**
+	 * Initiate portfolio lightbox
+	 */
+	const portfolioLightbox = GLightbox({
+		selector: ".portfolio-lightbox",
+	});
 
-		/**
-		 * Initiate portfolio lightbox
-		 */
-		const portfolioLightbox = GLightbox({
-			selector: ".portfolio-lightbox",
-		});
-
-		/**
-		 * Initiate portfolio details lightbox
-		 */
-		const portfolioDetailsLightbox = GLightbox({
-			selector: ".portfolio-details-lightbox",
-			width: "90%",
-			height: "90vh",
-		});
+	/**
+	 * Initiate portfolio details lightbox
+	 */
+	const portfolioDetailsLightbox = GLightbox({
+		selector: ".portfolio-details-lightbox",
+		width: "90%",
+		height: "90vh",
 	});
 
 	/**
@@ -356,48 +348,9 @@
   </div>
   `;
 
-	const portfolioTemplate = (portfolio) => {
-		const img =
-			{
-				web: `https://api.apiflash.com/v1/urltoimage?access_key=3ef5ce9cffc6455cbb0ddf3bf44a5fbf&url=${
-					portfolio.homepage || portfolio.html_url
-				}`,
-				// web: `https://shot.screenshotapi.net/screenshot?token=WYVZZD3-YAKMV0T-P291HFD-5DMZ6MY&url=${
-				// 	portfolio.homepage || portfolio.html_url
-				// }&output=image&file_type=png&wait_for_event=load`,
-				android: `https://raw.githubusercontent.com/${portfolio.full_name}/${portfolio.default_branch}/img.webp`,
-				flutter: `https://raw.githubusercontent.com/${portfolio.full_name}/${portfolio.default_branch}/img.webp`,
-				"back-end": `https://raw.githubusercontent.com/${portfolio.full_name}/${portfolio.default_branch}/img.webp`,
-			}[portfolio.category] || "assets/img/portfolio/portfolio-1.webp";
-		return `
-    <div class="col-lg-4 col-md-6 portfolio-item filter-${portfolio.category}">
-      <div class="portfolio-wrap">
-        <img src="${img}" class="img-fluid" alt="${portfolio.name}" onerror="
-          this.src='https://via.placeholder.com/600x338.png?text=${
-						portfolio.name
-					}';
-        ">
-        <div class="portfolio-info">
-          <h4>${portfolio.name}</h4>
-          <p>${portfolio.category.replace(/[-_]/g, " ")}</p>
-          <div class="portfolio-links">
-            <a href="${img}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="
-              ${portfolio.name}
-            "><i class="bx bx-plus"></i></a>
-            <a href="${
-							{ web: portfolio.homepage }[portfolio.category] ||
-							portfolio.html_url
-						}" target="_blank"><i class="bx bx-link"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    `;
-	};
-
-	/**
-	 * Initiate Pure Counter
-	 */
+	// /**
+	//  * Initiate Pure Counter
+	//  */
 	new PureCounter();
 
 	/**
