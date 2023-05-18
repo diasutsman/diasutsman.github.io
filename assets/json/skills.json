@@ -18,6 +18,9 @@
         "name": "Hapi JS"
     },
     {
+        "name": "ReactJS"
+    },
+    {
         "name": "Kotlin"
     },
     {
@@ -58,6 +61,9 @@
     },
     {
         "name": "Bootstrap"
+    },
+    {
+        "name": "TailwindCSS"
     },
     {
         "name": "Java"
