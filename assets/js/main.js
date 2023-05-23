@@ -7,43 +7,6 @@
 		)
 	);
 
-	const fetchPortfolio = () => {
-		return fetch(
-			"https://api.github.com/search/repositories?q=user:diasutsman%20topic:project&per_page=100",
-			{
-				headers: {
-					Accept: "application/vnd.github+json",
-					Authorization: `Bearer ${GITHUB_API_KEY}`,
-				},
-			}
-		)
-			.then((response) => response.json())
-			.then((data) =>
-				data.items
-					.filter(({ topics }) =>
-						topics.some((topic) =>
-							["web", "android", "back-end", "flutter"].includes(topic)
-						)
-					)
-					.map((portfolio) => ({
-						...portfolio,
-						category: portfolio.topics.find((topic) =>
-							["web", "android", "back-end", "flutter"].includes(topic)
-						),
-						name: normalizeText.normalizeName(
-							portfolio.name
-								.replace(/[-_]/g, " ")
-								.replace(/[a-z][A-Z]/g, (c) => `${c[0]} ${c[1]}`)
-						),
-					}))
-					.map((portfolio) => portfolioTemplate(portfolio))
-					.join("")
-			)
-			.catch((error) => {
-				return error;
-			});
-	};
-
 	/**
 	 * Easy selector helper function
 	 */
