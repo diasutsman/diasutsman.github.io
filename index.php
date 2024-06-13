@@ -187,7 +187,7 @@ include './php/getEnv.php';
                     <div class="col-lg-3 col-md-6">
                         <div class="count-box">
                             <i class="bi bi-emoji-smile"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
+                            <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter"></span>
                             <p>Happy Clients</p>
                         </div>
                     </div>
