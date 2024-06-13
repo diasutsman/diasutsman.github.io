@@ -387,4 +387,86 @@
 			button.classList.remove("bg-secondary", "bg-success");
 		}, 1000);
 	});
+
+	//* Rupiah formatter
+	const rupiah = (number) => {
+		return new Intl.NumberFormat("id-ID", {
+			style: "currency",
+			currency: "IDR",
+		}).format(number);
+	};
+
+	//* Buy me a coffee button
+	const buyMeACoffeeBtn = document.getElementById("buy-me-a-coffee");
+
+	buyMeACoffeeBtn.addEventListener("click", async () => {
+		const payDonation = async (amount) => {
+			const data = new FormData();
+			data.set("amount", amount);
+			try {
+				Swal.showLoading();
+				const response = await fetch("php/buyMeACoffee.php", {
+					method: "POST",
+					body: data,
+				});
+
+				const token = await response.text();
+
+				console.log(token);
+				window.snap.pay(token, {
+					onSuccess: function (result) {
+						/* You may add your own implementation here */
+						console.log(result);
+						Swal.fire({
+							title: "Sukses!",
+							text: `Terima kasih telah mendonasikan ${rupiah(
+								result["gross_amount"]
+							)}.`,
+							icon: "success",
+						});
+					},
+					onPending: function (result) {
+						/* You may add your own implementation here */
+						Swal.fire({
+							title: "Sedang menunggu pembayaran.",
+							text: `Mohon bersabar untuk menunggu pembayaran anda.`,
+							icon: "info",
+						});
+						console.log(result);
+					},
+					onError: function (result) {
+						/* You may add your own implementation here */
+						Swal.fire({
+							title: "Terjadi error.",
+							text: `Mohon bersabar terjadi error, akan diperbaiki oleh developer.`,
+							icon: "error",
+						});
+						console.log(result);
+					},
+					onClose: function () {
+						/* You may add your own implementation here */
+						Swal.fire({
+							title: "Tidak jadi berdonasi.",
+							text: `Mungkin lain kali jika memang ada rezeki.`,
+							icon: "info",
+						});
+					},
+				});
+			} catch (error) {
+				console.log(error);
+			}
+		};
+
+		Swal.fire({
+			title: "Masukkan jumlah donasi",
+			input: "number",
+			inputAttributes: {
+				required: "",
+				min: 1000,
+			},
+			preConfirm: payDonation,
+			inputLabel: "Jumlah Donasi",
+			inputPlaceholder: "Silahkan seikhlasnya (dalam rupiah)",
+		});
+	});
 })();
