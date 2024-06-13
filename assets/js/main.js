@@ -463,6 +463,7 @@
 			inputAttributes: {
 				required: "",
 				min: 1000,
+				max: 99_999_999_999,
 			},
 			preConfirm: payDonation,
 			inputLabel: "Jumlah Donasi",
