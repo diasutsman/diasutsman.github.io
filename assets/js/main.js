@@ -348,7 +348,7 @@
 		});
 
 	// skills
-	select(".skills-content").innerHTML = await fetch("/assets/json/skills.json")
+	select(".skills-content").innerHTML = await fetch("./assets/json/skills.json")
 		.then((response) => response.json())
 		.then((data) => data.map((skill) => skillTemplate(skill)).join(""));
 

@@ -1,6 +1,6 @@
 <?php
 //* Get env vars
-include 'php/getEnv.php';
+include './php/getEnv.php';
 ?>
 
 <!DOCTYPE html>
@@ -15,22 +15,22 @@ include 'php/getEnv.php';
     <meta content="Software Developer, Android Developer, Web Developer, Back-End Developer" name="keywords" />
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.jpg" rel="icon" />
-    <link href="assets/img/apple-touch-icon.jpg" rel="apple-touch-icon" />
+    <link href="./assets/img/favicon.jpg" rel="icon" />
+    <link href="./assets/img/apple-touch-icon.jpg" rel="apple-touch-icon" />
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
 
     <!-- Vendor CSS Files -->
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="./assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="./assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="./assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="./assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
     <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
 
     <!-- Midtrans -->
     <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="<? $env['CLIENT_KEY'] ?>"></script>
@@ -434,7 +434,7 @@ include 'php/getEnv.php';
                                 <h4>Elbara Kreasi</h4>
                                 <p>Website</p>
                                 <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/web/elbara-kreasi.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Elbara Kreasi Website"><i class="bx bx-zoom-in"></i></a>
+                                    <a href="./assets/img/portfolio/web/elbara-kreasi.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Elbara Kreasi Website"><i class="bx bx-zoom-in"></i></a>
                                     <a href="https://elbarakreasi.com/" target="_blank" referrerpolicy="noreferrer" title="Elbara Kreasi"><i class="bx bx-link"></i></a>
                                 </div>
                             </div>
@@ -447,7 +447,7 @@ include 'php/getEnv.php';
                                 <h4>Forum API (Dicoding Submission)</h4>
                                 <p>Back End</p>
                                 <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/back-end/forum-api.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Forum API"><i class="bx bx-zoom-in"></i></a>
+                                    <a href="./assets/img/portfolio/back-end/forum-api.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Forum API"><i class="bx bx-zoom-in"></i></a>
                                     <a href="https://github.com/diasutsman/forum-api" target="_blank" referrerpolicy="noreferrer" title="Forum API"><i class="bx bx-link"></i></a>
                                 </div>
                             </div>
@@ -460,7 +460,7 @@ include 'php/getEnv.php';
                                 <h4>Rumah Belajar</h4>
                                 <p>Website</p>
                                 <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/web/rumah-belajar.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Rumah Belajar Website"><i class="bx bx-zoom-in"></i></a>
+                                    <a href="./assets/img/portfolio/web/rumah-belajar.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Rumah Belajar Website"><i class="bx bx-zoom-in"></i></a>
                                     <a href="https://diasutsman.github.io/Rumah-Belajar-Profile/" target="_blank" referrerpolicy="noreferrer" title="Rumah Belajar"><i class="bx bx-link"></i></a>
                                 </div>
                             </div>
@@ -473,7 +473,7 @@ include 'php/getEnv.php';
                                 <h4>Open Music API (Dicoding Submission)</h4>
                                 <p>Back End</p>
                                 <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/back-end/open-music-api.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Open Music API"><i class="bx bx-zoom-in"></i></a>
+                                    <a href="./assets/img/portfolio/back-end/open-music-api.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Open Music API"><i class="bx bx-zoom-in"></i></a>
                                     <a href="https://github.com/diasutsman/open-music-api" target="_blank" referrerpolicy="noreferrer" title="Open Music API"><i class="bx bx-link"></i></a>
                                 </div>
                             </div>
@@ -486,7 +486,7 @@ include 'php/getEnv.php';
                                 <h4>Ngabs Coding</h4>
                                 <p>Website</p>
                                 <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/web/ngabs-coding.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Ngabs Coding Website"><i class="bx bx-zoom-in"></i></a>
+                                    <a href="./assets/img/portfolio/web/ngabs-coding.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Ngabs Coding Website"><i class="bx bx-zoom-in"></i></a>
                                     <a href="https://diasutsman.github.io/ITFEST-2022-ngabs-rpl/" target="_blank" referrerpolicy="noreferrer" title="Ngabs Coding"><i class="bx bx-link"></i></a>
                                 </div>
                             </div>
@@ -499,7 +499,7 @@ include 'php/getEnv.php';
                                 <h4>Bookshelf API (Dicoding Submission)</h4>
                                 <p>Back End</p>
                                 <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/back-end/bookshelf-api.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Bookshelf API"><i class="bx bx-zoom-in"></i></a>
+                                    <a href="./assets/img/portfolio/back-end/bookshelf-api.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Bookshelf API"><i class="bx bx-zoom-in"></i></a>
                                     <a href="https://github.com/diasutsman/bookshelf-api" target="_blank" referrerpolicy="noreferrer" title="Bookshelf API"><i class="bx bx-link"></i></a>
                                 </div>
                             </div>
@@ -512,7 +512,7 @@ include 'php/getEnv.php';
                                 <h4>Pic Bundles</h4>
                                 <p>Android</p>
                                 <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/android/pic-bundles.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pic Bundles"><i class="bx bx-zoom-in"></i></a>
+                                    <a href="./assets/img/portfolio/android/pic-bundles.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pic Bundles"><i class="bx bx-zoom-in"></i></a>
                                     <a href="https://github.com/diasutsman/PicBundles" target="_blank" referrerpolicy="noreferrer" title="Pic Bundles"><i class="bx bx-link"></i></a>
                                 </div>
                             </div>
@@ -525,7 +525,7 @@ include 'php/getEnv.php';
                                 <h4>Alarm App</h4>
                                 <p>Android</p>
                                 <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/android/alarm-app.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pic Bundles"><i class="bx bx-zoom-in"></i></a>
+                                    <a href="./assets/img/portfolio/android/alarm-app.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pic Bundles"><i class="bx bx-zoom-in"></i></a>
                                     <a href="https://github.com/diasutsman/SmartAlarm" target="_blank" referrerpolicy="noreferrer" title="Pic Bundles"><i class="bx bx-link"></i></a>
                                 </div>
                             </div>
@@ -538,7 +538,7 @@ include 'php/getEnv.php';
                                 <h4>Weather App</h4>
                                 <p>Android</p>
                                 <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/android/weather-app.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Weather App"><i class="bx bx-zoom-in"></i></a>
+                                    <a href="./assets/img/portfolio/android/weather-app.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Weather App"><i class="bx bx-zoom-in"></i></a>
                                     <a href="https://github.com/diasutsman/WeatherApp" target="_blank" referrerpolicy="noreferrer" title="Weather App"><i class="bx bx-link"></i></a>
                                 </div>
                             </div>
