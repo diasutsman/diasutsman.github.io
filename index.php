@@ -113,7 +113,7 @@ include 'php/getEnv.php';
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 d-flex justify-content-center">
                         <img src="assets/img/profile-img-2.webp" class="img-fluid" alt="" />
                     </div>
                     <div class="col-lg-8 pt-4 pt-lg-0 content d-flex flex-column justify-content-center">
